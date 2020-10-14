@@ -79,7 +79,12 @@ int main(void) {
 		if (player_x == enemy1_x && player_y == enemy1_y) {
 			system("cls");
 			printf("\n\033[1;31mYOU LOST\033[0m\n\n");
-			printf("Your Score: %d\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			if (scoreCounter(moves, score) > 0) {
+				printf("Your Score: \033[1;32m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
+			else {
+				printf("Your Score:\033[1;31m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
 			score = 2000;
 			lossMenu(score_file);
 			moves = 0;
@@ -88,7 +93,13 @@ int main(void) {
 		else if (player_x == enemy2_x && player_y == enemy2_y) {
 			system("cls");
 			printf("\n\033[1;31mYOU LOST\033[0m\n\n");
-			printf("Your Score: %d\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			if (scoreCounter(moves, score) > 0) {
+				printf("Your Score: \033[1;32m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
+			else {
+				printf("Your Score:\033[1;31m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
+			
 			score = 2000;
 			lossMenu(score_file);
 			moves = 0;
@@ -97,7 +108,14 @@ int main(void) {
 		else if (treasure_x == player_x && treasure_y == player_y) {
 			system("cls");
 			printf("\033[1;32m\nYOU WON\033[0m\n\n");
-			printf("Your Score: %d\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\nPress 'n' to save your score\n\nPress 'c' to try to get better score", scoreCounter(moves, score));
+
+			if (scoreCounter(moves, score) > 0) {
+				printf("Your Score: \033[1;32m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\nPress 'n' to save your score\n\nPress 'c' to continue your current game", scoreCounter(moves, score));
+			}
+			else {
+				printf("Your Score: \033[1;31m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\nPress 'n' to save your score\n\nPress 'c' to continue your current game", scoreCounter(moves, score));
+			}
+			
 			score = scoreCounter(moves, score);
 			winMenu(score_file, &score);
 			moves = 0;
@@ -111,7 +129,12 @@ int main(void) {
 		if (enemy1_x == player_x && enemy1_y == player_y) {
 			system("cls");
 			printf("\n\033[1;31mYOU LOST\033[0m\n\n");
-			printf("Your Score: %d\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			if (scoreCounter(moves, score) > 0) {
+				printf("Your Score: \033[1;32m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
+			else {
+				printf("Your Score:\033[1;31m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
 			score = 2000;
 			lossMenu(score_file);
 			moves = 0;
@@ -126,7 +149,12 @@ int main(void) {
 		if (enemy2_x == player_x && enemy2_y == player_y) {
 			system("cls");
 			printf("\n\033[1;31mYOU LOST\033[0m\n\n");
-			printf("Your Score: %d\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			if (scoreCounter(moves, score) > 0) {
+				printf("Your Score: \033[1;32m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
+			else {
+				printf("Your Score:\033[1;31m%d\033[0m\n\nPress 'ENTER' to play again\n\nPress 'm' to go back to main menu\n\nPress 'h' to view high scores\n\nPress 'q' to exit\n\n", scoreCounter(moves, score));
+			}
 			score = 2000;
 			lossMenu(score_file);
 			moves = 0;
@@ -278,7 +306,7 @@ void intro() {
 	printf("\033[0;31m(E)\033[0m");
 	printf(" and try to get the Treasure");
 	printf("\033[1;33m(T)\033[0m");
-	printf(" in the least possible amount of moves.\n\n");
+	printf(" in the least possible amount of moves.\nWhen you get treasure you can choose to end the game and save your score or continue your current game to achieve higher score.\n\n");
 	printf("Press 'ENTER' To Start Game\n\n");
 	printf("Press 'h' To View High Scores\n\n");
 	printf("Press 'q' To Exit\n");
@@ -294,7 +322,6 @@ void winMenu(FILE* score_file,int *score) {
 		if (c == 'h') {
 			system("cls");
 			viewScore(score_file);
-			
 			printf("\nPress 'ENTER' to start the game\n\nPress 'm' to go back to the menu\n\nPress 'q' to quit\n");
 		}
 		if (c == 'm') {
@@ -324,7 +351,6 @@ void lossMenu(FILE* score_file) {
 		if (c == 'h') {
 			system("cls");
 			viewScore(score_file);
-			
 			printf("\nPress 'ENTER' to start the game\n\nPress 'm' to go back to the menu\n\nPress 'q' to quit\n");
 		}
 		if (c == 'm') {
