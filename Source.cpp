@@ -38,8 +38,10 @@ int main(void) {
 		fclose(score_file);
 		score_file = fopen("score.txt", "r+");
 	};
-	
+
+	system("cls");
 	intro();
+
 	lossMenu(score_file);
 
 	//while loop ktory sa stara o to aby hra nesla skoncit inak ako stlacenim 'q'
