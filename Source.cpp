@@ -40,7 +40,6 @@ int main(void) {
 	};
 	
 	intro();
-
 	lossMenu(score_file);
 
 	//while loop ktory sa stara o to aby hra nesla skoncit inak ako stlacenim 'q'
