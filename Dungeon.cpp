@@ -248,33 +248,33 @@ void enemyMove(int* enemy_x, int* enemy_y, int treasure_x, int treasure_y, int e
 			int randomizer = generateRandomNum();	//premenna vdaka ktorej sa nepriatelia hybu viac nahodne
 			int x_move = generateRandomEnemyMove(), y_move = generateRandomEnemyMove();
 			//podmienky davaju pozor na to aby sa nepriatelia nepohli na miesto ineho nepriatela, pokladu alebo za hranice hracej plochy
-			if ((((*enemy_x + x_move) != treasure_x && (*enemy_y + y_move) != treasure_y)) && (((*enemy_x + x_move) != enemy2_x) && (*enemy_y + y_move) != enemy2_y) && (*enemy_x + x_move) < 10 && (*enemy_y + y_move) < 10 && randomizer < 2) {
+			if ((((*enemy_x + x_move) != treasure_x && (*enemy_y + y_move) != treasure_y)) && (((*enemy_x + x_move) != enemy2_x) && (*enemy_y + y_move) != enemy2_y) && (*enemy_x + x_move) < 10 && (*enemy_y + y_move) < 10 && randomizer == 2) {
 				*enemy_x += x_move;
 				*enemy_y += y_move;
 			}
-			else if ((((*enemy_x - x_move) != treasure_x && (*enemy_y - y_move) != treasure_y)) && (((*enemy_x - x_move) != enemy2_x) && (*enemy_y - y_move) != enemy2_y) && (*enemy_x - x_move) > 0 && (*enemy_y - y_move) > 0 && randomizer < 3) {
+			else if ((((*enemy_x - x_move) != treasure_x && (*enemy_y - y_move) != treasure_y)) && (((*enemy_x - x_move) != enemy2_x) && (*enemy_y - y_move) != enemy2_y) && (*enemy_x - x_move) > 0 && (*enemy_y - y_move) > 0 && randomizer == 3) {
 				*(enemy_x) -= x_move;
 				*(enemy_y) -= y_move;
 			}
-			else if ((((*enemy_x - x_move) != treasure_x && (*enemy_y + y_move) != treasure_y)) && (((*enemy_x - x_move) != enemy2_x) && (*enemy_y + y_move) != enemy2_y) && (*enemy_x - x_move) > 0 && (*enemy_y + y_move) < 10 && randomizer < 4) {
+			else if ((((*enemy_x - x_move) != treasure_x && (*enemy_y + y_move) != treasure_y)) && (((*enemy_x - x_move) != enemy2_x) && (*enemy_y + y_move) != enemy2_y) && (*enemy_x - x_move) > 0 && (*enemy_y + y_move) < 10 && randomizer == 4) {
 				*(enemy_x) -= x_move;
 				*(enemy_y) += y_move;
 
 			}
-			else if ((((*enemy_x + x_move) != treasure_x && (*enemy_y - y_move) != treasure_y)) && (((*enemy_x + x_move) != enemy2_x) && (*enemy_y - y_move) != enemy2_y) && (*enemy_x + x_move) < 10 && (*enemy_y - y_move) > 0 && randomizer < 5) {
+			else if ((((*enemy_x + x_move) != treasure_x && (*enemy_y - y_move) != treasure_y)) && (((*enemy_x + x_move) != enemy2_x) && (*enemy_y - y_move) != enemy2_y) && (*enemy_x + x_move) < 10 && (*enemy_y - y_move) > 0 && randomizer == 5) {
 				*(enemy_x) += x_move;
 				*(enemy_y) -= y_move;
 			}
-			else if ((((*enemy_x - x_move) != treasure_x) && (((*enemy_x - x_move) != enemy2_x)) && (*enemy_x - x_move) > 0) && randomizer < 6) {
+			else if ((((*enemy_x - x_move) != treasure_x) && (((*enemy_x - x_move) != enemy2_x)) && (*enemy_x - x_move) > 0) && randomizer == 6) {
 				*(enemy_x) -= x_move;
 			}
-			else if ((((*enemy_x + x_move) != treasure_x) && (((*enemy_x + x_move) != enemy2_x)) && (*enemy_x + x_move) < 10) && randomizer < 7) {
+			else if ((((*enemy_x + x_move) != treasure_x) && (((*enemy_x + x_move) != enemy2_x)) && (*enemy_x + x_move) < 10) && randomizer == 7) {
 				*(enemy_x) += x_move;
 			}
-			else if ((((*enemy_y - y_move) != treasure_y) && (((*enemy_y - y_move) != enemy2_y)) && (*enemy_y - y_move) > 0 ) && randomizer < 8) {
+			else if ((((*enemy_y - y_move) != treasure_y) && (((*enemy_y - y_move) != enemy2_y)) && (*enemy_y - y_move) > 0 ) && randomizer == 8) {
 				*(enemy_y) -= x_move;
 			}
-			else if ((((*enemy_y + y_move) != treasure_y) && (((*enemy_y + x_move) != enemy2_x)) && (*enemy_x + x_move) < 10) && randomizer < 9) {
+			else if ((((*enemy_y + y_move) != treasure_y) && (((*enemy_y + x_move) != enemy2_x)) && (*enemy_x + x_move) < 10) && randomizer == 9) {
 				*(enemy_y) += x_move;
 			}
 		}
